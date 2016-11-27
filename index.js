@@ -26930,19 +26930,20 @@ function fakeFilter(element) {
 
 
 // views is directory for all template files
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
+//app.set('views', __dirname + '/views');
+//app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
-  response.render('pages/index');
+  response.send('Hello World!');
 });
 
-app.get('/cool', function(request, response) {
-  response.send(cool());
+app.get('/primary_skills_count', function (req, res) {
+    primarySkillsCount = mock_skills_array_from_real.length;
+    res.json({"Count": primarySkillsCount});
 });
 
 app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
+  console.log('Node app SkillClustersMock with React is running on port', app.get('port'));
 });
 
 
