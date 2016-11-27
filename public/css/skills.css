@@ -1,0 +1,52 @@
+body {
+    font-family: "Open Sans", "Bitstream Vera Sans", "DejaVu Sans", "Lucida Grande", Arial, sans-serif;
+    padding-top : 80px;
+}
+
+h1 {
+    float: left;
+    font-size: 1.5em;
+}
+
+.jumbotron {
+    padding: 5% 10% 5% 10%;
+    background-color: hsla(0, 0%, 80%, 0.22);
+}
+.greet {
+    display: block;
+    padding-right: 20%;
+    padding-bottom: 20px;
+}
+h4 {
+    padding-right: 10%;
+    line-height: 160%;
+}
+.headline {
+    width: 800px;
+    margin-left: 30%;
+    margin-right: 35%;
+}
+
+.row {
+    height: 700px;
+}
+
+.mainContent {
+    height: 700px;
+    overflow: scroll;
+    margin: 1% 5% 10%;
+}
+
+.primary {
+    list-style-type: none;
+}
+
+#searchbar {
+
+    text-align: right;
+}
+
+#smBtn {
+    text-align: justify;
+
+}
