@@ -26942,6 +26942,38 @@ app.get('/primary_skills_count', function (req, res) {
     res.json({"Count": primarySkillsCount});
 });
 
+app.get('/skills', function (req, res) {
+  //res.json(mock_skills_array);
+  //console.error(err.stack);
+  res.json(mock_skills_array_from_real);
+});
+
+app.get('/skills/:searchTerm', function (req, res) {
+  console.log('/skills/:searchTerm');
+  var searchTerm = req.params.searchTerm; 
+  var filteredArray = mock_skills_array_from_real.filter(matchesSearchTerm(searchTerm));
+  //var filteredArray = mock_skills_array_from_real.filter(fakeFilter);
+  res.json(filteredArray);
+    //res.json({"SearchTerm": searchTerm});
+});
+
+
+app.get('/skills/:pageNum/:itemsPerPage', function (req, res) {
+  //res.json(mock_skills_array);
+  //console.error(err.stack);
+  console.log('/skills/:pageNum/:itemsPerPage');
+  var skillsRange = [];
+  var pageNum = req.params.pageNum; 
+  var itemsPerPage = req.params.itemsPerPage;
+  for (var ind=0; ind < mock_skills_array_from_real.length; ind++) {
+    if ((ind >= (pageNum-1)*itemsPerPage) && (ind < pageNum*itemsPerPage))
+      skillsRange.push(mock_skills_array_from_real[ind]);
+  }
+    
+  res.json(skillsRange);
+});
+
+
 app.listen(app.get('port'), function() {
   console.log('Node app SkillClustersMock with React is running on port', app.get('port'));
 });
