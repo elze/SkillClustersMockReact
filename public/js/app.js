@@ -1,22 +1,17 @@
-class PrimarySkillsList extends React.Component {
+class PrimarySkills extends React.Component {
   render() {
+    this.state = {primarySkills: [{title: "C#"}, {title: ".NET"}, {title: "Javascript"}, {title: "Angular.js"}]}
     return (
       <ul>
-        <li class="primary">
-          This will be skill 1
-        </li>
-        <li class="primary">
-          This will be skill 2
-        </li>
-        <li class="primary">
-          This will be skill 3
-        </li>
+      {this.state.primarySkills.map((primarySkill, i) =>
+          <li class="primary" key={i}>{primarySkill.title}</li>
+			    )}
       </ul>
     );
   }
 }
 
 ReactDOM.render(
-  <PrimarySkillsList />,
+  <PrimarySkills />,
   document.getElementById('skills-container')
 );
