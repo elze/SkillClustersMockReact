@@ -1,6 +1,19 @@
 class PrimarySkills extends React.Component {
+constructor(props) {
+    super(props);
+    this.state = {primarySkills: [{title: "C#"}, {title: ".NET"}, {title: "Javascript"}, {title: "Angular.js"}]};
+  }
+
+  componentDidMount() {
+
+  }
+
+  componentWillUnmount() {
+
+  }
+
   render() {
-    this.state = {primarySkills: [{title: "C#"}, {title: ".NET"}, {title: "Javascript"}, {title: "Angular.js"}]}
+
     return (
       <ul>
       {this.state.primarySkills.map((primarySkill, i) =>
