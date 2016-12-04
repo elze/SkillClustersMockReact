@@ -8,7 +8,7 @@ constructor(props) {
     //this.state = {primarySkills: [{title: "C#"}, {title: ".NET"}, {title: "Javascript"}, {title: "Angular.js"}, {title: "React.js"}, {title: "Backbone.js"}]};
 
     //var self = this;
-    fetch(`http://localhost:5000/skills`)
+    fetch(`skills`)
       .then(response => response.json())
       .then(json =>
 	    this.setState({
