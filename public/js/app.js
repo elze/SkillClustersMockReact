@@ -26,7 +26,8 @@ constructor(props) {
     return (
       <ul>
       {this.state.primarySkills.map((primarySkill, i) =>
-          <li class="primary" key={i}>{primarySkill.primary_term}</li>
+       <li className="primary" key={i}>
+	<a className="btn btn-info btn-md" href="none">{primarySkill.primary_term}</a> </li>
 			    )}
       </ul>
     );
